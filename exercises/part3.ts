@@ -8,9 +8,16 @@ let kilometersToTheMoon: number = 384400;
 let milesPerKilometer: number = 0.621;
 
 // Code the "getDaysToLocation" function here:
-
+function getDaysToLocation(kilometersAway: number): number {
+    let miles = kilometersAway * milesPerKilometer;
+    let hours = miles / speedMph;
+    let days = hours / 24;
+    return days;
+};
 
 
 
 
 // Call the function and print the outputs for the Mars trip and the moon trip:
+console.log(`${spacecraftName} will reach Mars in ${getDaysToLocation(kilometersToMars)} days.`);
+console.log(`${spacecraftName} will reach the Moon in ${getDaysToLocation(kilometersToTheMoon)} days.`);
